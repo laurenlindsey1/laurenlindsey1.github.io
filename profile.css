@@ -1,5 +1,6 @@
 body{
 	background-image: url("http://cdn.pcwallart.com/images/dark-gradient-tumblr-wallpaper-1.jpg");
+	background-repeat: no-repeat;
 	font-size: 18;
 	border: 15px solid white;
 	border-style:double;
@@ -13,11 +14,10 @@ p{
 
 }
 h2{
-	color:lightblue; 
+	color:darkgrey;
 
 }
 li{
-	border: 5px solid blue;
 	border-radius: 5px;
 	color: #f9f;
 
