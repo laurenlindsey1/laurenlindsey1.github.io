@@ -1,4 +1,4 @@
-span{
+body{
 	font-size: 18;
 	border: 15px solid white;
 	border-style:double;
@@ -19,6 +19,7 @@ h2{
 li{
 	border-radius: 5px;
 	color: #f9f;
+	text-align: center;
 }
 body{
 	padding: 20px;
