@@ -1,0 +1,23 @@
+body{
+	background-color: #f9f;
+	font-size: 18;
+	border: 15px solid white;
+	border-style:double;
+	padding: 20px;
+	margin: 20px;
+}
+h1{
+	color:grey;
+}
+p{
+
+}
+h2{
+
+}
+li{
+	border: 10px solid blue;
+	border-style: dashed;
+	border-radius: 10px;
+
+}
