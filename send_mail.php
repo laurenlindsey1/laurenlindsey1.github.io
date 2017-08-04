@@ -1,5 +1,29 @@
 <?php
-// This function checks for email injection. Specifically, it checks for carriage returns - typically used by spammers to inject a CC list.
+/*
+This first bit sets the email address that you want the form to be submitted to.
+You will need to change this value to a valid email address that you can access.
+*/
+$webmaster_email = "ily.lauren119@example.com";
+
+/*
+This bit sets the URLs of the supporting pages.
+If you change the names of any of the pages, you will need to change the values here.
+*/
+$feedback_page = "feedback_form.html";
+$error_page = "error_message.html";
+$thankyou_page = "thank_you.html";
+
+/*
+This next bit loads the form field data into variables.
+If you add a form field, you will need to add it here.
+*/
+$email_address = $_REQUEST['email_address'] ;
+$comments = $_REQUEST['comments'] ;
+
+/*
+The following function checks for email injection.
+Specifically, it checks for carriage returns - typically used by spammers to inject a CC list.
+*/
 function isInjected($str) {
 	$injections = array('(\n+)',
 	'(\r+)',
@@ -19,28 +43,25 @@ function isInjected($str) {
 	}
 }
 
-// Load form field data into variables.
-$comments = $_REQUEST['comments'] ;
-
-// If the user tries to access this script directly, redirect them to feedback form,
+// If the user tries to access this script directly, redirect them to the feedback form,
 if (!isset($_REQUEST['email_address'])) {
-header( "Location: feedback_form.html" );
+header( "Location: $feedback_page" );
 }
 
 // If the form fields are empty, redirect to the error page.
 elseif (empty($email_address) || empty($comments)) {
-header( "Location: error_message.html" );
+header( "Location: $error_page" );
 }
 
 // If email injection is detected, redirect to the error page.
 elseif ( isInjected($email_address) ) {
-header( "Location: error_message.html" );
+header( "Location: $error_page" );
 }
 
-// If we passed all previous tests, send the email!
+// If we passed all previous tests, send the email then redirect to the thank you page.
 else {
-mail( "ily.lauren119@gmail.com", "Feedback Form Results",
+mail( "$webmaster_email", "Feedback Form Results",
   $comments, "From: $email_address" );
-header( "Location: thank_you.html" );
+header( "Location: $thankyou_page" );
 }
 ?>
