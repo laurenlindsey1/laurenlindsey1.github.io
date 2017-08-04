@@ -1,44 +1,93 @@
 <!-- DOCTYPE HTML -->
- <title>All About Lauren</title>
+ <title>Lauren Lindsey</title>
  <link href = "profile.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src = "profile.js"></script>
+ <!-- map -->
+ <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 300px;
+        width:300px;
+      }
+    </style>
+    <head>
+    	<h1>
+            <button class = "animate">Animate</button>
+            <button class = "unanimate">Un-animate</button>
+            <div></div></h1>
+            <h4> Lauren Lindsey </h4>
+    </head>
 	 <body>
-	        <h1>About Me</h1>
+         <button class = "message"><a href="feedbackform.html">Message</a></button>
+         <!--!<div id="button"><a href="feedbackform.html">Message</a></div>-->
+         <button class = "game">Game</button>
+         <button class = "pg3">Page 3</button>
+         <form name="userGreeting">
+            <label>Enter Name:</label>
+            <input type="text" id="username">
+            <input type="button" id="greeting" value="OK">
+         </form>
+         <h3 class="welcome">Welcome!!!</h3>
+	 	<!--<button class = "liFader">fade out</button>-->
+	        <div id = "left"><h2>About Me</h2>
+
 	        <p>
-	        I am a <a href="http://www.google.com">Google</a> CSSI student, and I will be attending <em> Loyola Marymount University</em> in the fall!
+	        I am a <a href="http://www.google.com">Google</a> CSSI student, and I will be attending Loyola Marymount University in the fall!
 	        </p>
 	        <div>
 	                <h2>My personal information</h2>
-	                <ol>
+	                <ul>
 	                        <li>Age: 18</li>
+                            <li>Height: 5'3"</li>
 	                        <li>Hometown: Saratoga, CA </li>
-	                        <img src="http://pics2.city-data.com/city/maps/fr1240.png" width= "400" height = "400">
-	                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Memorial_Arch_Saratoga_California.jpg/250px-Memorial_Arch_Saratoga_California.jpg" width= "400" height = "400">
-	                         <li>Height: 5'3"</li>
-	                </ol>
+	                        <!--insert map of saratoga-->
+                            <div id="map"></div>
+                            <script>
+                            var map;
+                            function initMap() {
+                                map = new google.maps.Map(document.getElementById('map'), {
+                                  center: {lat: 37.2638, lng: -122.0230},
+                                  zoom: 10
+                                });
+                              }
+                            </script>
+                            <span class = "pic">
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQNN5OG11UbTfakAq8Knal-3yZhmjTSkk&callback=initMap"
+                            async defer></script> </span>
+	                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Memorial_Arch_Saratoga_California.jpg/250px-Memorial_Arch_Saratoga_California.jpg" width= "300" height = "300">
+                    </ul>
 	        </div>
+            </div>
 	        <div>
+                <div id = "right">
 	                <h2>My interests</h2>
 	                <ul>
 	                        <li>Math</li>
+	                        <li>Computer Science</li>
 	                        <li>Going to the Beach</li>
-	                        <li>Taking Naps</li>
+	                        <li>Adventuring</li>
 	                </ul>
 	        </div>
 	        <div>
 	        	<h2>My favorite Spotify playlists</h2>
 	        	<ol>
-	        		<li><strong> Rap Caviar</strong>
+	        		<li>Rap Caviar
 	        		<li>Pop Chillout
 	        		<li>Hot Country
 	        	</ol>
 
 	        </div>
 	        <div>
-	        	<h2>Cute Dogs</h2>
+	        	<h2>My Social Media</h2>
 	        		<ul>
-	        			<li><a href= "http://cdn.akc.org/corgi-4.jpg"> Corgis </a>
-	        			<li><a href= "https://d3cg3jn1dlk00f.cloudfront.net/e/4/d/5.png"> Another Corgi </a>
-	        			<li><a href="http://www.dogbreedslist.info/uploads/allimg/dog-pictures/Cardigan-Welsh-Corgi-3.jpg">More Dogs</a>
+                        <li><a href="https://www.facebook.com/lauren.lindsey.3388"><img src="https://d1afx9quaogywf.cloudfront.net/sites/default/files/Logos/facebook-logo_0.png" alt="test" width=300 height=100 border="0"></a>
+	        			<li><a href= "https://www.instagram.com/laurenlinsdey/"><img src="http://is2.mzstatic.com/image/thumb/Purple128/v4/cd/11/b8/cd11b84d-3eab-dce4-db60-33e31a981fd1/source/1200x630bb.jpg" alt="test" width=100 height=100 border="0"></a>
+	        			<li><a href="https://twitter.com/sassylaurenxo?lang=en"><img src="http://www.statisticbrain.com/wp-content/uploads/2015/10/twitter-company-statistics.jpg" alt="test" width=300 height=100 border="0"></a>
 	        		</ul>
 	        </div>
+        </div>
 	        </body>
