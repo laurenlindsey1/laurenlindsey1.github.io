@@ -1,4 +1,4 @@
-# Casper Website
-This repository hosts the website for Casper, a programming language created by Teddy Chu, Ian Lizarda, Donovan Moini, Alexia Filler, and Serena Zafiris for CMSI 488: Language Translation and Implementation at Loyola Marymount University.
+# Lauren Lindsey Website
+This repository contains code for my personal website. 
 
-You can view the website at [https://dmoini.github.io/casper/](https://dmoini.github.io/casper/).
+You can view the website at [https://laurenlindsey1.github.io/](https://laurenlindsey1.github.io/).
